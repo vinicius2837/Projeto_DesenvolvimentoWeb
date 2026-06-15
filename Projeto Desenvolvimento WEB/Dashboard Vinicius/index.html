@@ -3,57 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Dashboard</title>
+    <title>Dashboard Semântico</title>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+      <script type="text/javascript">
+  window.onload = function () {
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+
+      title:{
+      text: "Desempenho Mensal (2026)"
+      },
+       data: [
+      {
+        type: "line",
+
+        dataPoints: [
+        { x: new Date(2026, 0, 1), y: 450 },
+        { x: new Date(2026, 1, 1), y: 414 },
+        { x: new Date(2026, 2, 1), y: 520 },
+        { x: new Date(2026, 3, 1), y: 460 },
+        { x: new Date(2026, 4, 1), y: 450 },
+        { x: new Date(2026, 5, 1), y: 500 },
+        { x: new Date(2026, 6, 1), y: 480 },
+        { x: new Date(2026, 7, 1), y: 480 },
+        { x: new Date(2026, 8, 1), y: 410 },
+        { x: new Date(2026, 9, 1), y: 500 },
+        { x: new Date(2026, 10, 1), y: 480 },
+        { x: new Date(2026, 11, 1), y: 510 }
+        ]
+      }
+      ]
+    });
+
+    chart.render();
+  }
+  </script>
+ <script type="text/javascript" src="https://cdn.canvasjs.com/canvasjs.min.js">
+    
+ </script>
+    </head>
 <body>
     <div class="dashboard-container">
-
-        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-        <aside class="sidebar" id="sidebar" aria-label="Menu Principal">
+                <aside class="sidebar" aria-label="Menu Principal">
             <div class="sidebar-brand">
-                <a href="#" style="text-decoration: none;"><h2 class="brand-title">Meu Dashboard</h2></a>
+                <a href="#" style="text-decoration: none;"><h2 style="color: orange;">Meu Dashboard</h2></a>
             </div>
             <nav class="sidebar-nav">
                 <ul class="sidebar-li">
-                    <li><a href="Portifólio Rick/index.html" target="_blank">Portifólio</a></li>
-                    <li><a href="Landing Page Renan/index.html" target="_blank">Landing Page</a></li>
-                    <li><a href="#">Análises</a></li>
-                    <li><a href="#">Usuários</a></li>
-                    <li><a href="#">Configurações</a></li>
+                    <li style="margin-top: 20px;"><a href="Portifólio Rick/index.html" target="_blank" style="text-decoration: none;">Portifólio</a></li>
+                    <li style="margin-top: 20px;"><a href="Landing Page Renan/index.html" target="_blank" style="text-decoration: none;">Landing Page</a></li>
+                    <li style="margin-top: 20px;"><a href="#" style="text-decoration: none;">Análises</a></li>
+                    <li style="margin-top: 20px;"><a href="#" style="text-decoration: none;">Usuários</a></li>
+                    <li style="margin-top: 20px;"><a href="#" style="text-decoration: none;">Configurações</a></li>
                 </ul>
             </nav>
-            <div class="sidebar-footer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" aria-label="Perfil do usuário" role="img" cursor="pointer">
-                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                </svg>
-            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="margin-top: 370px;" href="#" cursor="pointer">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+</svg>
         </aside>
-
-        <main class="main-content">
-            <header class="topbar">
+                <main class="main-content">
+                        <header class="topbar" style="padding: 10px;">
                 <div class="user-profile">
                     <h1><span>Olá, Vinicius</span></h1>
                 </div>
             </header>
-
             <section class="metrics-section" aria-label="Métricas Principais">
                 <article class="card">
                     <h3>Gastos</h3>
                     <p class="card-value">R$ 600</p>
                 </article>
                 <article class="card">
-                    <h3>Metas concluídas</h3>
+                    <h3>Metas conclúidas</h3>
                     <p class="card-value">7</p>
                 </article>
                 <article class="card">
@@ -61,90 +82,53 @@
                     <p class="card-value">16,67%</p>
                 </article>
             </section>
-
             <section class="content-grid">
                 <article class="card chart-card">
                     <h3>Desempenho Mensal</h3>
-                    <div id="chartContainer" class="chart-container-line"></div>
+                    <div class="chart-placeholder">
+                         <div id="chartContainer" style="height: 300px; width: 100%;">
+  </div>
                 </article>
                 <article class="card activity-card">
                     <h3>Atividades Recentes</h3>
-                    <div class="chart-container-pie">
-                        <canvas id="meuGrafico"></canvas>
-                    </div>
-                </article>
-            </section>
-        </main>
+                    <div class="chart-container">
+        <canvas id="meuGrafico"></canvas>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <script>
-        window.addEventListener('load', function () {
-            var chart = new CanvasJS.Chart("chartContainer", {
-                title: { text: "Desempenho Mensal (2026)", fontSize: 16 },
-                data: [{
-                    type: "line",
-                    dataPoints: [
-                        { x: new Date(2026, 0, 1), y: 450 },
-                        { x: new Date(2026, 1, 1), y: 414 },
-                        { x: new Date(2026, 2, 1), y: 520 },
-                        { x: new Date(2026, 3, 1), y: 460 },
-                        { x: new Date(2026, 4, 1), y: 450 },
-                        { x: new Date(2026, 5, 1), y: 500 },
-                        { x: new Date(2026, 6, 1), y: 480 },
-                        { x: new Date(2026, 7, 1), y: 480 },
-                        { x: new Date(2026, 8, 1), y: 410 },
-                        { x: new Date(2026, 9, 1), y: 500 },
-                        { x: new Date(2026, 10, 1), y: 480 },
-                        { x: new Date(2026, 11, 1), y: 510 }
-                    ]
-                }]
-            });
-            chart.render();
-        });
-
         const ctx = document.getElementById('meuGrafico').getContext('2d');
-        new Chart(ctx, {
-            type: 'pie',
+        
+        const meuGrafico = new Chart(ctx, {
+            type: 'pie', // Define o tipo como Gráfico de Pizza
             data: {
                 labels: ['Trabalhar', 'Estudar', 'Jogar videogame', 'Ver TV'],
                 datasets: [{
                     label: 'Atividades',
                     data: [12, 20, 3, 5],
-                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+                    backgroundColor: [
+                        '#FF6384',
+                        '#36A2EB',
+                        '#FFCE56',
+                        '#4BC0C0'
+                    ],
                     hoverOffset: 4
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: true,
                 plugins: {
-                    legend: { position: 'top' },
-                    title: { display: true, text: 'Atividades' }
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Atividades'
+                    }
                 }
             }
         });
-
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('sidebarOverlay');
-
-        function openSidebar() {
-            sidebar.classList.add('sidebar--open');
-            overlay.classList.add('overlay--visible');
-            hamburgerBtn.setAttribute('aria-expanded', 'true');
-        }
-
-        function closeSidebar() {
-            sidebar.classList.remove('sidebar--open');
-            overlay.classList.remove('overlay--visible');
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-        }
-
-        hamburgerBtn.addEventListener('click', function () {
-            sidebar.classList.contains('sidebar--open') ? closeSidebar() : openSidebar();
-        });
-
-        overlay.addEventListener('click', closeSidebar);
     </script>
+
 </body>
 </html>

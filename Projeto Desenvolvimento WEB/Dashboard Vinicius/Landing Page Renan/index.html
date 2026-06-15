@@ -21,9 +21,6 @@
     />
 
     <style>
-      /* ====================================================
-           CSS CUSTOM PROPERTIES — Tema principal
-        ==================================================== */
       :root {
         --bg: #151515;
         --text: #dfdfdf;
@@ -35,7 +32,6 @@
         --border: #2e2e2e;
         --border-strong: #444444;
 
-        /* Escala tipográfica fluida (clamp: min | ideal | max) */
         --text-xs: clamp(0.7rem, 1.2vw, 0.8rem);
         --text-sm: clamp(0.85rem, 1.5vw, 0.95rem);
         --text-base: clamp(1rem, 1.8vw, 1.1rem);
@@ -46,7 +42,6 @@
         --text-4xl: clamp(2.1rem, 5vw, 3rem);
         --text-hero: clamp(2.5rem, 7vw, 5rem);
 
-        /* Espaçamentos fluidos */
         --space-xs: clamp(0.5rem, 1vw, 0.75rem);
         --space-sm: clamp(0.75rem, 1.5vw, 1rem);
         --space-md: clamp(1rem, 2vw, 1.5rem);
@@ -55,16 +50,12 @@
         --space-2xl: clamp(3rem, 6vw, 6rem);
         --space-3xl: clamp(4rem, 8vw, 8rem);
 
-        /* Layout */
         --container-max: 1600px;
         --container-pad: clamp(1rem, 5vw, 4rem);
         --radius-card: 1.5rem;
         --radius-btn: 9999px;
       }
 
-      /* ====================================================
-           ALTO CONTRASTE — WCAG AAA
-        ==================================================== */
       body.high-contrast {
         --bg: #000000;
         --text: #ffffff;
@@ -77,9 +68,6 @@
         --border-strong: #ffffff;
       }
 
-      /* ====================================================
-           BASE
-        ==================================================== */
       *,
       *::before,
       *::after {
@@ -109,7 +97,6 @@
         padding-right: env(safe-area-inset-right, 0px);
       }
 
-      /* Fontes de display */
       h1,
       h2,
       h3,
@@ -122,18 +109,12 @@
         display: block;
       }
 
-      /* ====================================================
-           FOCO VISÍVEL — WCAG 2.4.11 / AAA
-        ==================================================== */
       :focus-visible {
         outline: 3px solid var(--accent) !important;
         outline-offset: 4px !important;
         border-radius: 4px;
       }
 
-      /* ====================================================
-           SKIP LINK — WCAG 2.4.1
-        ==================================================== */
       .skip-link {
         position: absolute;
         top: -100%;
@@ -151,9 +132,6 @@
         top: 0;
       }
 
-      /* ====================================================
-           CONTAINER RESPONSIVO (Tablet ↔ Desktop ↔ TV)
-        ==================================================== */
       .container {
         width: 100%;
         max-width: var(--container-max);
@@ -161,9 +139,6 @@
         padding-inline: var(--container-pad);
       }
 
-      /* ====================================================
-           HEADER / NAV
-        ==================================================== */
       .site-header {
         position: sticky;
         top: 0;
@@ -193,7 +168,6 @@
         flex-shrink: 0;
       }
 
-      /* Menu desktop */
       .nav-links {
         display: none;
         list-style: none;
@@ -215,7 +189,6 @@
         color: var(--accent);
       }
 
-      /* Menu hambúrguer — mobile / tablet */
       .nav-hamburger {
         display: flex;
         flex-direction: column;
@@ -246,7 +219,6 @@
           transform 0.3s,
           opacity 0.3s;
       }
-      /* Animação X quando aberto */
       .nav-hamburger[aria-expanded="true"] span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
       }
@@ -257,7 +229,6 @@
         transform: translateY(-7px) rotate(-45deg);
       }
 
-      /* Drawer mobile */
       .nav-drawer {
         display: none;
         flex-direction: column;
@@ -296,7 +267,6 @@
         gap: var(--space-sm);
       }
 
-      /* Botão de alto contraste */
       .contrast-btn {
         display: flex;
         align-items: center;
@@ -320,7 +290,6 @@
         color: var(--bg);
       }
 
-      /* CTA principal */
       .btn-primary {
         display: inline-flex;
         align-items: center;
@@ -380,9 +349,6 @@
         transform: translateY(-2px);
       }
 
-      /* ====================================================
-           SEÇÃO HERO
-        ==================================================== */
       .hero {
         position: relative;
         overflow: hidden;
@@ -475,9 +441,6 @@
         transform: scale(1.03) rotate(-1deg);
       }
 
-      /* ====================================================
-           SEÇÃO SPECS / BENEFÍCIOS
-        ==================================================== */
       .specs {
         padding-block: var(--space-3xl);
       }
@@ -562,9 +525,6 @@
         line-height: 1.65;
       }
 
-      /* ====================================================
-           SEÇÃO SABORES
-        ==================================================== */
       .flavors {
         padding-block: var(--space-3xl);
         background: var(--surface);
@@ -597,9 +557,6 @@
         padding: var(--space-lg);
       }
 
-      /* ====================================================
-           DEPOIMENTOS
-        ==================================================== */
       .testimonials {
         padding-block: var(--space-3xl);
       }
@@ -669,9 +626,6 @@
         opacity: 0.6;
       }
 
-      /* ====================================================
-           FOOTER
-        ==================================================== */
       .site-footer {
         background: var(--bg);
         border-top: 2px solid var(--border);
@@ -769,11 +723,6 @@
         opacity: 0.45;
       }
 
-      /* ====================================================
-           RESPONSIVIDADE POR BREAKPOINT
-        ==================================================== */
-
-      /* Smartphone pequeno — 480px+ */
       @media (min-width: 480px) {
         .hero-ctas {
           flex-direction: row;
@@ -781,7 +730,6 @@
         }
       }
 
-      /* Tablet — 640px+ */
       @media (min-width: 640px) {
         .specs-grid {
           grid-template-columns: repeat(2, 1fr);
@@ -794,7 +742,6 @@
         }
       }
 
-      /* Tablet landscape / Small desktop — 900px+ */
       @media (min-width: 900px) {
         .nav-links {
           display: flex;
@@ -837,14 +784,12 @@
         }
       }
 
-      /* Large desktop — 1280px+ */
       @media (min-width: 1280px) {
         .hero-img {
           width: 520px;
         }
       }
 
-      /* TV / Extra wide — 1800px+ */
       @media (min-width: 1800px) {
         :root {
           --container-pad: clamp(4rem, 8vw, 10rem);
@@ -866,9 +811,6 @@
         }
       }
 
-      /* ====================================================
-           MOTION REDUZIDO — WCAG 2.3.3
-        ==================================================== */
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
@@ -883,9 +825,6 @@
         }
       }
 
-      /* ====================================================
-           PRINT — básico
-        ==================================================== */
       @media print {
         .site-header,
         .nav-hamburger,
@@ -899,9 +838,6 @@
         }
       }
 
-      /* ====================================================
-           UTILITÁRIOS
-        ==================================================== */
       .text-accent {
         color: var(--accent);
       }
@@ -919,14 +855,10 @@
     </style>
   </head>
   <body class="antialiased">
-    <!-- Skip link WCAG 2.4.1 -->
     <a href="#main-content" class="skip-link"
       >Pular para o conteúdo principal</a
     >
 
-    <!-- =========================================================
-         HEADER
-    ========================================================= -->
     <header class="site-header" role="banner">
       <nav class="container" aria-label="Navegação principal">
         <div class="nav-inner">
@@ -935,7 +867,6 @@
             [Ctrl]<span class="text-accent">+</span>Zzz
           </a>
 
-          <!-- Links desktop -->
           <ul class="nav-links" role="list">
             <li><a href="#sobre">Sobre</a></li>
             <li><a href="#sabores">Sabores</a></li>
@@ -943,7 +874,6 @@
             <li><a href="#depoimentos">Reviews</a></li>
           </ul>
 
-          <!-- Ações direita -->
           <div class="nav-actions">
             <button
               id="contrast-toggle"
@@ -977,7 +907,6 @@
               Comprar
             </a>
 
-            <!-- Hambúrguer -->
             <button
               id="menu-toggle"
               class="nav-hamburger"
@@ -990,7 +919,6 @@
           </div>
         </div>
 
-        <!-- Drawer mobile -->
         <div
           id="mobile-menu"
           class="nav-drawer"
@@ -1006,17 +934,12 @@
       </nav>
     </header>
 
-    <!-- =========================================================
-         MAIN
-    ========================================================= -->
     <main id="main-content" tabindex="-1">
-      <!-- HERO ------------------------------------------------ -->
       <section id="sobre" class="hero" aria-labelledby="hero-title">
         <div class="hero-glow" aria-hidden="true"></div>
 
         <div class="container">
           <div class="hero-inner">
-            <!-- Texto -->
             <div class="hero-text">
               <span class="hero-eyebrow">v2.0 agora disponível</span>
               <h1 id="hero-title" class="hero-title">
@@ -1035,7 +958,6 @@
               </div>
             </div>
 
-            <!-- Imagem da lata -->
             <div class="hero-visual">
               <img
                 src="assets/lata.png"
@@ -1051,7 +973,6 @@
         </div>
       </section>
 
-      <!-- SPECS ----------------------------------------------- -->
       <section id="beneficios" class="specs" aria-labelledby="specs-title">
         <div class="container">
           <header class="section-header">
@@ -1145,7 +1066,6 @@
         </div>
       </section>
 
-      <!-- SABORES --------------------------------------------- -->
       <section id="sabores" class="flavors" aria-labelledby="flavors-title">
         <div class="container">
           <header class="section-header">
@@ -1208,7 +1128,6 @@
         </div>
       </section>
 
-      <!-- DEPOIMENTOS ----------------------------------------- -->
       <section
         id="depoimentos"
         class="testimonials"
@@ -1261,13 +1180,9 @@
       </section>
     </main>
 
-    <!-- =========================================================
-         FOOTER
-    ========================================================= -->
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="footer-grid">
-          <!-- Brand -->
           <div class="footer-brand">
             <a href="/" class="nav-logo" aria-label="Início — [Ctrl]+Zzz">
               [Ctrl]<span class="text-accent">+</span>Zzz
@@ -1279,7 +1194,6 @@
             </p>
           </div>
 
-          <!-- Links -->
           <nav aria-label="Links do rodapé — documentação">
             <h3 class="footer-col-title">Documentação</h3>
             <ul class="footer-links" role="list">
@@ -1289,7 +1203,6 @@
             </ul>
           </nav>
 
-          <!-- Social -->
           <div>
             <h3 class="footer-col-title">Siga o Repositório</h3>
             <div class="social-links" role="list">
@@ -1330,14 +1243,9 @@
       </div>
     </footer>
 
-    <!-- =========================================================
-         SCRIPTS
-    ========================================================= -->
     <script>
       (() => {
-        /* -------------------------------------------------------
-           ALTO CONTRASTE
-        ------------------------------------------------------- */
+
         const contrastBtn = document.getElementById("contrast-toggle");
         const stored = localStorage.getItem("highContrast") === "true";
         const prefersDark = window.matchMedia(
@@ -1355,9 +1263,6 @@
           applyContrast(!document.body.classList.contains("high-contrast")),
         );
 
-        /* -------------------------------------------------------
-           MENU HAMBÚRGUER
-        ------------------------------------------------------- */
         const menuToggle = document.getElementById("menu-toggle");
         const mobileMenu = document.getElementById("mobile-menu");
 
@@ -1375,12 +1280,10 @@
           toggleMenu(!isOpen);
         });
 
-        /* Fecha o drawer ao clicar em qualquer link interno */
         mobileMenu.querySelectorAll("a").forEach((link) => {
           link.addEventListener("click", () => toggleMenu(false));
         });
 
-        /* Fecha o drawer ao pressionar Escape */
         document.addEventListener("keydown", (e) => {
           if (e.key === "Escape" && mobileMenu.classList.contains("is-open")) {
             toggleMenu(false);
@@ -1388,7 +1291,6 @@
           }
         });
 
-        /* Fecha se a viewport ficar grande o suficiente */
         const mq = window.matchMedia("(min-width: 900px)");
         mq.addEventListener("change", (e) => {
           if (e.matches) toggleMenu(false);
